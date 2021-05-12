@@ -20,6 +20,12 @@
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Foreground" Value="Black"/>
     </Style>
+    
+    <Style TargetType="PasswordBox">
+        <Setter Property="FontFamily" Value="Balsamiq Sans Bold"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
 
     <Style TargetType="ComboBox">
         <Setter Property="FontFamily" Value="Balsamiq Sans Bold"/>
@@ -38,4 +44,5 @@
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="Foreground" Value="Black"/>
     </Style>
+    
 </ResourceDictionary>
