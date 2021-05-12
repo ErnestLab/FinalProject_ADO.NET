@@ -8,5 +8,8 @@ namespace FinalProject_ADONET.Models
 {
     public class Account
     {
+        public int Id { get; set; }
+        public string Login { get; set; }
+        public string Passw { get; set; }
     }
 }
