@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject_ADONET.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,23 @@ namespace FinalProject_ADONET
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void registrationEnterButton_Click(object sender, RoutedEventArgs e)
+        {
+          // ...
+        }
+
+        private void clientEnterButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow(this);
+            loginWindow.ShowDialog();
+        }
+
+        private void adminEnterButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdministrationLoginWindow loginWindow = new AdministrationLoginWindow(this);
+            loginWindow.ShowDialog();
         }
     }
 }

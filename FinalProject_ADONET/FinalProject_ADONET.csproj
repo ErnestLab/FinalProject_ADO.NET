@@ -68,6 +68,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AdministrationLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,6 +85,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EF\DataManager.cs" />
+    <Compile Include="Views\AdministrationLoginWindow.xaml.cs">
+      <DependentUpon>AdministrationLoginWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -145,6 +152,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Enter.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RegistrationLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\staffEnterLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

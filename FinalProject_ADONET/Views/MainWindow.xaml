@@ -12,8 +12,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        <Button x:Name="adminEnterButton" Margin="50,242,50,80">
+
+        <Button x:Name="adminEnterButton" Margin="50,207,50,115" Click="adminEnterButton_Click">
             <Button.Content>
                 <DockPanel>
                     <TextBlock Text="Вход для администратора" DockPanel.Dock="Bottom"/>
@@ -21,7 +21,15 @@
                 </DockPanel>
             </Button.Content>
         </Button>
-        <Button x:Name="clientEnterButton" Margin="50,242,50,80" Grid.Column="1">
+        <Button x:Name="registrationEnterButton" Margin="277,328,276,16" Grid.ColumnSpan="2" Click="registrationEnterButton_Click">
+            <Button.Content>
+                <DockPanel>
+                    <TextBlock Text="Регистрация для покупателя" DockPanel.Dock="Bottom" FontSize="14"/>
+                    <Image Source="../Images/RegistrationLogo.png"/>
+                </DockPanel>
+            </Button.Content>
+        </Button>
+        <Button x:Name="clientEnterButton" Margin="50,207,50,115" Grid.Column="1" Click="clientEnterButton_Click">
             <Button.Content>
                 <DockPanel>
                     <TextBlock Text="Вход для покупателя" DockPanel.Dock="Bottom"/>
@@ -30,6 +38,8 @@
             </Button.Content>
         </Button>
         <Image Source="../Images/logoStore.jpg" Margin="199,10,198,270" Grid.ColumnSpan="2"/>
+        
+                    
     </Grid>
 
 
