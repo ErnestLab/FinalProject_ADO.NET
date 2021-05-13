@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject_ADONET.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,30 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FinalProject_ADONET.Views
+namespace FinalProject_ADONET
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void registrationEnterButton_Click(object sender, RoutedEventArgs e)
+        {
+            // ...
+        }
+
+        private void clientEnterButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow(this);
+            loginWindow.ShowDialog();
+        }
+
+        private void adminEnterButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdministrationLoginWindow loginWindow = new AdministrationLoginWindow(this);
+            loginWindow.ShowDialog();
         }
     }
 }
