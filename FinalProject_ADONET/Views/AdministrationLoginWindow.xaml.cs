@@ -19,9 +19,9 @@ using System.Windows.Threading;
 namespace FinalProject_ADONET.Views
 {
     /// <summary>
-    /// Логика взаимодействия для LoginWindow.xaml
+    /// Логика взаимодействия для AdministrationLoginWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class AdministrationLoginWindow : Window
     {
         DataManager _dataManager;
         MainWindow _mainWindow;
@@ -30,7 +30,7 @@ namespace FinalProject_ADONET.Views
         private int countTimer = 5;
         public string Login { get; set; }
 
-        public LoginWindow(MainWindow mainWindow)
+        public AdministrationLoginWindow(MainWindow mainWindow)
         {
             InitializeComponent();
             _dataManager = new DataManager();
@@ -105,7 +105,7 @@ namespace FinalProject_ADONET.Views
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             //if (!succes)
-            // _mainWindow.Close();
+            //_mainWindow.Close();
         }
         private void LoginBox_KeyDown(object sender, KeyEventArgs e)
         {
