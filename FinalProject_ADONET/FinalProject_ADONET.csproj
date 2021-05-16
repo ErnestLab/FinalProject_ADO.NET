@@ -70,6 +70,9 @@
       <DependentUpon>202105161529421_ThirdMigration_UpdateClassAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BooksViewModel.cs" />
+    <Compile Include="Views\BuyerWindow.xaml.cs">
+      <DependentUpon>BuyerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdministrationLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BuyerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
