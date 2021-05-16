@@ -65,6 +65,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Migrations\202105162141439_FourthMigration.cs" />
+    <Compile Include="Migrations\202105162141439_FourthMigration.Designer.cs">
+      <DependentUpon>202105162141439_FourthMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TypeAccount.cs" />
+    <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\BooksViewModel.cs" />
     <Page Include="Resources\BaseStyle.xaml">
       <SubType>Designer</SubType>
@@ -83,6 +89,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EF\DataManager.cs" />
+    <Compile Include="ViewModels\GenreViewModel.cs" />
+    <Compile Include="ViewModels\OperationsViewModel.cs" />
+    <Compile Include="ViewModels\StockViewModel.cs" />
+    <Compile Include="ViewModels\TypeAccountViewModel.cs" />
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -123,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105121340269_SecondMigration.resx">
       <DependentUpon>202105121340269_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105162141439_FourthMigration.resx">
+      <DependentUpon>202105162141439_FourthMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

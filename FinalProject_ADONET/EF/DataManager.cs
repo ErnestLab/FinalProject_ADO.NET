@@ -15,5 +15,6 @@ namespace FinalProject_ADONET.EF
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Stock> Stocks { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
+        public virtual DbSet<TypeAccount> TypeAccounts { get; set; }
     }    
 }
