@@ -65,7 +65,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Migrations\202105161529421_ThirdMigration_UpdateClassAccount.cs" />
+    <Compile Include="Migrations\202105161529421_ThirdMigration_UpdateClassAccount.Designer.cs">
+      <DependentUpon>202105161529421_ThirdMigration_UpdateClassAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BooksViewModel.cs" />
+    <Compile Include="Views\RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Resources\BaseStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -97,6 +104,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Migrations\202105121054358_FirstMigration.cs" />
@@ -131,6 +142,9 @@
     <EmbeddedResource Include="Migrations\202105121340269_SecondMigration.resx">
       <DependentUpon>202105121340269_SecondMigration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105161529421_ThirdMigration_UpdateClassAccount.resx">
+      <DependentUpon>202105161529421_ThirdMigration_UpdateClassAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -155,6 +169,12 @@
   <ItemGroup>
     <Resource Include="Images\RegistrationLogo.png" />
     <Resource Include="Images\staffEnterLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\registrationIco.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\registrationButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,7 +25,8 @@ namespace FinalProject_ADONET
 
         private void registrationEnterButton_Click(object sender, RoutedEventArgs e)
         {
-            // ...
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.ShowDialog();
         }
 
         private void clientEnterButton_Click(object sender, RoutedEventArgs e)
