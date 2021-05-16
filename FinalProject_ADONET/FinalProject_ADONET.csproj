@@ -65,14 +65,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Migrations\202105162141439_FourthMigration.cs" />
-    <Compile Include="Migrations\202105162141439_FourthMigration.Designer.cs">
-      <DependentUpon>202105162141439_FourthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TypeAccount.cs" />
-    <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\BooksViewModel.cs" />
+    <Compile Include="Views\RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Resources\BaseStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdministrationLoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,10 +90,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EF\DataManager.cs" />
-    <Compile Include="ViewModels\GenreViewModel.cs" />
-    <Compile Include="ViewModels\OperationsViewModel.cs" />
-    <Compile Include="ViewModels\StockViewModel.cs" />
-    <Compile Include="ViewModels\TypeAccountViewModel.cs" />
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -100,6 +97,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Migrations\202105121054358_FirstMigration.cs" />
@@ -134,8 +135,6 @@
     <EmbeddedResource Include="Migrations\202105121340269_SecondMigration.resx">
       <DependentUpon>202105121340269_SecondMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105162141439_FourthMigration.resx">
-      <DependentUpon>202105162141439_FourthMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -157,6 +156,16 @@
     <Resource Include="Images\favicon.png" />
     <Resource Include="Images\LogoEnter.png" />
     <Resource Include="Images\logoStore.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RegistrationLogo.png" />
+    <Resource Include="Images\staffEnterLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\registrationIco.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\registrationButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
