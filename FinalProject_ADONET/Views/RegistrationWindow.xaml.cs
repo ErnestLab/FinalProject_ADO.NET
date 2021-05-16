@@ -14,12 +14,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace FinalProject_ADONET.Views
 {
     public partial class RegistrationWindow : Window
     {
         DataManager dm = new DataManager();
+
+        bool succes;
+        private DispatcherTimer timer = null;
+        private int countTimer = 5;
 
         bool FioStatus = false;
         bool PhoneStatus = false;
@@ -30,6 +35,7 @@ namespace FinalProject_ADONET.Views
         public RegistrationWindow()
         {
             InitializeComponent();
+            FIO.Focus();
         }
 
         private void FIO_TextChanged(object sender, TextChangedEventArgs e)
@@ -188,7 +194,47 @@ namespace FinalProject_ADONET.Views
 
         private void registrationEnterButton_Click(object sender, RoutedEventArgs e)
         {
-            // нужно обновить класс Account
+            if (FioStatus == true && PhoneStatus == true && EmailStatus == true
+                && LoginStatus == true && PasswStatus == true)
+            {
+                string newFIO = FIO.Text;
+                long newPhone = long.Parse(phone.Text);
+                string newEmail = email.Text;
+                string newLogin = login.Text;
+                string newPassw = GetMd5Hash(passw.Password);
+
+                dm.Accounts.Add(new Models.Account()
+                {
+                    FIO = newFIO,
+                    Phone = newPhone,
+                    Email = newEmail,
+                    Login = newLogin,
+                    Passw = newPassw
+                });
+              
+                statusRegistration.Foreground = Brushes.Green;
+                statusRegistration.Content = $"Успешно регестрация через : {countTimer}";
+
+                timer = new DispatcherTimer();
+                timer.Interval = new TimeSpan(0, 0, 0, 0, 250);
+                timer.Tick += new EventHandler(timer_Tick);
+                timer.Start();
+
+                dm.SaveChanges();
+            }
+        }
+
+
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (succes)
+            {
+                statusRegistration.Content = $"Успешно регестрация через : {countTimer}";
+            }
+            if (countTimer == 0) { timer.Stop();  this.Close(); };
+
+            countTimer--;
         }
         private string GetMd5Hash(string target)
         {
