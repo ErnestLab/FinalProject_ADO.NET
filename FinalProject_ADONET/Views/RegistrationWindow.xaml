@@ -30,22 +30,26 @@
 
         <StackPanel Grid.Row="1">
             <Label Content="Фамилия и имя :"  />
-            <TextBox x:Name="FIO" Foreground="DarkViolet" Margin="5 0 5 0" TextChanged="FIO_TextChanged" MaxLength="20"/>
+            <TextBox x:Name="FIO" Foreground="DarkViolet" Margin="5 0 5 0" TextChanged="FIO_TextChanged" MaxLength="20"
+                     KeyDown="FIO_KeyDown"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2">
             <Label Content="Номер телефона :" />
-            <TextBox x:Name="phone"  Foreground="DarkViolet" Margin="5 0 5 0" TextChanged="phone_TextChanged" MaxLength="12"/>
+            <TextBox x:Name="phone"  Foreground="DarkViolet" Margin="5 0 5 0" TextChanged="phone_TextChanged" MaxLength="12"
+                     KeyDown="phone_KeyDown"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3">
             <Label Content="Email :" />
-            <TextBox x:Name="email" Foreground="DarkViolet" Margin="5 0 5 0" TextChanged="email_TextChanged" MaxLength="20"/>
+            <TextBox x:Name="email" Foreground="DarkViolet" Margin="5 0 5 0" TextChanged="email_TextChanged" MaxLength="20"
+                     KeyDown="email_KeyDown"/>
         </StackPanel>
 
         <StackPanel Grid.Row="4">
             <Label Content="Логин :" />
-            <TextBox x:Name="login" Foreground="DarkViolet" Margin="5 0 5 0" TextChanged="login_TextChanged" MaxLength="15"/>
+            <TextBox x:Name="login" Foreground="DarkViolet" Margin="5 0 5 0" TextChanged="login_TextChanged" MaxLength="15"
+                     KeyDown="login_KeyDown"/>
         </StackPanel>
 
         <StackPanel Grid.Row="5">

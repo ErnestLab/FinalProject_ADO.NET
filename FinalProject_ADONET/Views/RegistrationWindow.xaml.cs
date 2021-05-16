@@ -112,6 +112,13 @@ namespace FinalProject_ADONET.Views
                 if (email.Text.Contains("@gmail.com") || email.Text.Contains("@yahoo.com")
                     || email.Text.Contains("@ukr.net") || email.Text.Contains("@outlook.com"))
                     EmailStatus = true;
+                else
+                {
+                    emailStatus.Content = "❌";
+                    emailStatus.Foreground = Brushes.Red;
+                    EmailStatus = false;
+                }
+
                 if (EmailStatus == true && email.Text.Length > 5)
                 {
                     emailStatus.Content = "✅"; emailStatus.Foreground = Brushes.Green;
@@ -139,6 +146,12 @@ namespace FinalProject_ADONET.Views
                 {
                     LoginStatus = true;
                     loginStatus.Content = "✅"; loginStatus.Foreground = Brushes.Green;
+                }
+                else
+                {
+                    loginStatus.Content = "❌";
+                    loginStatus.Foreground = Brushes.Red;
+                    LoginStatus = false;
                 }
             }
             else
@@ -189,6 +202,25 @@ namespace FinalProject_ADONET.Views
             string result = sBuilder.ToString();
 
             return result;
+        }
+
+
+
+        private void FIO_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) phone.Focus();
+        }
+        private void phone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) email.Focus();
+        }
+        private void email_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) login.Focus();
+        }
+        private void login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) passw.Focus();
         }
     }
 }
