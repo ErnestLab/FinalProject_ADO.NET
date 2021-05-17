@@ -79,7 +79,14 @@ namespace FinalProject_ADONET.Views
                     timer.Tick += new EventHandler(timer_Tick);
                     timer.Start();
 
+
+                    
                     _mainWindow.Close();
+
+                    BuyerWindow buyerWindow = new BuyerWindow();
+                    buyerWindow.ShowDialog();
+
+                    this.Close();
                 }
                 else
                 {
@@ -104,8 +111,8 @@ namespace FinalProject_ADONET.Views
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            //if (!succes)
-            // _mainWindow.Close();
+            
+            
         }
         private void LoginBox_KeyDown(object sender, KeyEventArgs e)
         {
