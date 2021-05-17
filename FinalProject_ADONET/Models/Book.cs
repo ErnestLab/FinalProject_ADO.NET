@@ -48,6 +48,6 @@ namespace FinalProject_ADONET.Models
         [Column(TypeName = "bit")]
         public bool IsPartBookSeries { get; set; }
 
-        public virtual List<Stock> Stocks { get; set; }
+        public virtual IEnumerable<Stock> Stocks { get; set; }
     }
 }

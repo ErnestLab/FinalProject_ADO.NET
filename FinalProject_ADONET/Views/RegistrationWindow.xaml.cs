@@ -203,13 +203,15 @@ namespace FinalProject_ADONET.Views
                 string newLogin = login.Text;
                 string newPassw = GetMd5Hash(passw.Password);
 
+
                 dm.Accounts.Add(new Models.Account()
                 {
                     FIO = newFIO,
                     Phone = newPhone,
                     Email = newEmail,
                     Login = newLogin,
-                    Passw = newPassw
+                    Passw = newPassw,
+                    TypeAccountId = 1
                 });
               
                 statusRegistration.Foreground = Brushes.Green;

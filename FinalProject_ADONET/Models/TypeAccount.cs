@@ -8,18 +8,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FinalProject_ADONET.Models
 {
-    public class Stock
+    public class TypeAccount
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [Column(TypeName = "float")]
-        public double Percent { get; set; }
+        [StringLength(50)]
+        public string Name { get; set; }
 
-        [Required]
-        [ForeignKey("Book")]
-        public int BookId { get; set; }
-        public virtual Book Book { get; set; }
+        public virtual IEnumerable<Account> Accounts { get; set; }
     }
 }

@@ -69,7 +69,13 @@
     <Compile Include="Migrations\202105161529421_ThirdMigration_UpdateClassAccount.Designer.cs">
       <DependentUpon>202105161529421_ThirdMigration_UpdateClassAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\TypeAccount.cs" />
+    <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\BooksViewModel.cs" />
+    <Compile Include="ViewModels\GenreViewModel.cs" />
+    <Compile Include="ViewModels\OperationsViewModel.cs" />
+    <Compile Include="ViewModels\StockViewModel.cs" />
+    <Compile Include="ViewModels\TypeAccountViewModel.cs" />
     <Compile Include="Views\BuyerWindow.xaml.cs">
       <DependentUpon>BuyerWindow.xaml</DependentUpon>
     </Compile>
@@ -182,6 +188,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\registrationButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icoBuyingMenu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

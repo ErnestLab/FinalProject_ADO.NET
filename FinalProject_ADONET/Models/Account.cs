@@ -12,7 +12,12 @@ namespace FinalProject_ADONET.Models
     {
         [Key]
         public int Id { get; set; }
-        
+
+        [Required]
+        [ForeignKey("TypeAccount")]
+        public int TypeAccountId { get; set; }
+        public virtual TypeAccount TypeAccount { get; set; }
+
         [Required]
         [StringLength(50)]
         public string Login { get; set; }

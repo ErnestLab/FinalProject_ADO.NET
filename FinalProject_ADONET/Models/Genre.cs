@@ -17,6 +17,6 @@ namespace FinalProject_ADONET.Models
         [StringLength(50)]
         public string Name { get; set; }
 
-        public virtual List<Book> Books { get; set; }
+        public virtual IEnumerable<Book> Books { get; set; }
     }
 }

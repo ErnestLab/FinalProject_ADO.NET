@@ -61,7 +61,7 @@ namespace FinalProject_ADONET.Views
                 var accounts = _dataManager.Accounts.ToList();
                 foreach (Account a in accounts)
                 {
-                    if (a.Login == login && a.Passw == password)
+                    if (a.Login == login && a.Passw == password && a.TypeAccountId == 1)
                     {
                         succes = true;
                         Login = login;
@@ -82,11 +82,12 @@ namespace FinalProject_ADONET.Views
 
                     
                     _mainWindow.Close();
-
+                    
                     BuyerWindow buyerWindow = new BuyerWindow();
-                    buyerWindow.ShowDialog();
-
                     this.Close();
+                    buyerWindow.ShowDialog();
+                    
+
                 }
                 else
                 {
