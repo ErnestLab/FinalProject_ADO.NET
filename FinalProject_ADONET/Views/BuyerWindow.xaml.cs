@@ -21,36 +21,44 @@ namespace FinalProject_ADONET.Views
     /// </summary>
     public partial class BuyerWindow : Window
     {
-        OperationsViewModel ovm;
-        List<BooksViewModel> BooksInOrder = new List<BooksViewModel>();
-        BooksViewModel SelectedBookInOrder = new BooksViewModel(new Book() { });
-
+        OperationsViewModel ovm = new OperationsViewModel();
+        decimal allPrice = 0;
         public BuyerWindow()
         {
             InitializeComponent();
-            ovm = new OperationsViewModel();
             this.DataContext = ovm;
-            addedBooks.DisplayMemberPath = "BookName";
         }
-
         private void addBook_Click(object sender, RoutedEventArgs e)
         {
-            if (ovm.SelectedBook != null)
+            if (books.SelectedItem != null)
             {
-                BooksInOrder.Add(ovm.SelectedBook);
-                addedBooks.ItemsSource = BooksInOrder;
+                addedBooks.Items.Add(books.SelectedItem as BooksViewModel);
+                allPrice = 0;
+                foreach (BooksViewModel i in addedBooks.Items)
+                    allPrice += i.Price;
+                priceLabel.Content = $"Ваша корзина: {allPrice}";
+            }
+        }
+        private void delBook_Click(object sender, RoutedEventArgs e)
+        {
+            if (addedBooks.SelectedItem as BooksViewModel != null)
+            {
+                addedBooks.Items.Remove(addedBooks.SelectedItem);
+                allPrice = 0;
+                foreach (BooksViewModel i in addedBooks.Items)
+                    allPrice += i.Price;
+                priceLabel.Content = $"Ваша корзина: {allPrice}";
             }
         }
 
-        private void delBook_Click(object sender, RoutedEventArgs e)
+        private void buyBook_Click(object sender, RoutedEventArgs e)
         {
-            if(addedBooks.SelectedItem as BooksViewModel != null)
-            BooksInOrder.Remove(addedBooks.SelectedItem as BooksViewModel);
-        }
-
-        private void addedBooks_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
+            if (allPrice > 0)
+            {
+                FinalBuyerWindow fbw = new FinalBuyerWindow(allPrice);
+                fbw.ShowDialog();
+                addedBooks.Items.Clear();
+            }
         }
     }
 }

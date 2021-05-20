@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject_ADONET.Views"
         mc:Ignorable="d"
-        Title="BuyerWindow" Height="450" Width="800" Background="AliceBlue" Icon="../Images/icoBuyingMenu.png">
+        Title="BuyerWindow" Height="600" Width="1000" Background="AliceBlue" Icon="../Images/icoBuyingMenu.png">
     
     <Grid>
         <Grid.ColumnDefinitions>
@@ -80,10 +80,11 @@
             <Button x:Name="addBook" Content="Добавить книгу в корзину" DockPanel.Dock="Top" Margin="5"
                     Click="addBook_Click"/>
             <Button x:Name="delBook" Content="Удалить книгу из корзины" DockPanel.Dock="Top" Margin="5" Click="delBook_Click"/>
-            <Button x:Name="buyBook" Content="Купить книги из корзины" DockPanel.Dock="Top" Margin="5"/>
+            <Button x:Name="buyBook" Content="Купить книги из корзины" DockPanel.Dock="Top" Margin="5" Click="buyBook_Click"/>
 
             <Label x:Name="priceLabel" Content="Ваша корзина: " DockPanel.Dock="Top"/>
-            <ListBox x:Name="addedBooks" DockPanel.Dock="Top" Background="AliceBlue" SelectionChanged="addedBooks_SelectionChanged"/>
+            <ListBox x:Name="addedBooks" DockPanel.Dock="Top" Background="AliceBlue" 
+                     DisplayMemberPath="BookName"/>
 
         </DockPanel>
         
